@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download AntiVirus</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff8ac5, #e21587);
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .download-button {
+      position: relative;
+      padding: 15px 30px;
+      background-color: #fff;
+      color: #e21587;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .download-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 300%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: all 0.4s ease;
+    }
+
+    .download-button:hover::before {
+      left: 100%;
+    }
+
+    .download-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .download-button:active {
+      transform: scale(0.95);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Вращающаяся анимация при клике */
+    @keyframes buttonRotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .download-button:active::before {
+      animation: buttonRotate 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Кнопка со ссылкой на файл virtualshield.rar -->
+  <a href="virtualshield.rar" class="download-button" download>Скачать</a>
+
+</body>
+</html>
